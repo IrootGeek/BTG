@@ -113,6 +113,12 @@ vxstream_user_agent = {'User-agent': 'VxApi Connector'}
 vxstream_api_keys_secret = []
 
 [Viper]
+# viper_server = 'http://x.x.x.x:port/''
 viper_enabled = False
 viper_server = ""
 viper_user_agent = {'User-Agent': 'viper Connector'}
+
+[Virusshare]
+virusshare_enabled = False
+virusshare_username = ""
+virusshare_password = ""
