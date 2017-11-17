@@ -51,7 +51,7 @@ class Virusshare:
                 'password': self.config['virusshare_password']
                 }
 
-        header = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0',
+        header = {'User-Agent': self.config['user_agent']['User-Agent'],
                   'Host': 'virusshare.com',
                   'Referer': 'https://virusshare.com/',
                   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -140,10 +140,11 @@ class Virusshare:
             else:
                 return False
         elif 'NO BOTS! NO SCRAPERS!' in data:
-              mod.display(self.module_name, self.ioc, "ERROR", "VirusShare login faild!")
+              mod.display(self.module_name, self.ioc, "ERROR", "VirusShare login failed!")
+              return False
         else:
             return False
-            
+
     def search(self):
         try:
             mod.display(self.module_name, "", "INFO", "Searching...")
